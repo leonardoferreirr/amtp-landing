@@ -37,6 +37,10 @@
 
 html { scroll-behavior: smooth; }
 
+/* a navbar flutuante ocupa ~82px: sem isso a âncora para com o título atrás dela */
+:target,
+section[id] { scroll-margin-top: 100px; }
+
 body {
   font-family: var(--font-body);
   color: var(--ink);
@@ -166,6 +170,11 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
   border: 1px solid rgba(255, 255, 255, .08);
   border-radius: 24px;
   padding: 20px;
+  /* em landscape a tela tem ~390px de altura: sem isso o CTA do menu fica
+     fora do alcance */
+  max-height: calc(100dvh - 104px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .nav__mobile a {
   color: var(--white);
@@ -440,9 +449,9 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 .pillar__tag {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: .68rem;
+  font-size: .75rem;
   font-weight: 600;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
   text-transform: uppercase;
   background: rgba(39, 209, 200, .14);
   color: var(--teal-dark);
@@ -565,9 +574,9 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 .chat__live {
   margin-left: auto;
   font-family: var(--font-display);
-  font-size: .62rem;
+  font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   color: var(--teal);
   background: rgba(39, 209, 200, .13);
   border: 1px solid rgba(39, 209, 200, .3);
@@ -803,11 +812,13 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 }
 .footer__brand img { height: 48px; width: auto; max-width: none; }
 .footer__brand p { margin-top: 18px; max-width: 380px; font-size: .9rem; color: rgba(255, 255, 255, .6); }
-.footer__contact { display: flex; flex-direction: column; gap: 10px; }
+.footer__contact { display: flex; flex-direction: column; gap: 2px; }
 .footer__contact a {
   color: rgba(255, 255, 255, .8);
   text-decoration: none;
   font-size: .92rem;
+  /* alvo de toque de 40px: sem o padding o link tem só 24px de altura */
+  padding: 9px 0;
   transition: color .2s;
 }
 .footer__contact a:hover { color: var(--teal); }
@@ -904,6 +915,13 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
   .solutions__grid { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* celular deitado: comprime o menu para o CTA caber sem precisar rolar */
+@media (max-height: 500px) and (max-width: 900px) {
+  .nav__mobile { padding: 12px 14px; }
+  .nav__mobile a { padding: 7px 8px; font-size: .9rem; }
+  .nav__mobile .btn { margin-top: 4px; padding: 11px; font-size: .85rem; }
+}
+
 @media (max-width: 560px) {
   .container { width: calc(100% - 40px); }
   .pillars__grid { grid-template-columns: 1fr; }
@@ -913,5 +931,11 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
   .btn--lg { padding: 15px 26px; font-size: .88rem; }
   .btn--xl { padding: 17px 30px; font-size: .92rem; }
   .hero { padding-top: 130px; }
+  /* na tela estreita o texto ocupa o centro: os quadrados que caíam em cima
+     dele saem, os das bordas ficam mais discretos */
+  .px--2, .px--3, .px--6 { display: none; }
+  .px { opacity: .3; }
+  .px--1 { width: 24px; height: 24px; }
+  .px--8 { width: 32px; height: 32px; }
   .footer__inner { flex-direction: column; }
 }
