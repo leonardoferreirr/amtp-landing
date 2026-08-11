@@ -282,9 +282,12 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 }
 .hero__copy { text-align: left; }
 .hero__title {
-  font-size: clamp(1.95rem, .6rem + 3.4vw, 3.35rem);
+  font-size: clamp(1.7rem, .55rem + 2.7vw, 2.85rem);
   font-weight: 800;
+  text-wrap: nowrap;
 }
+/* as quebras sao as do markup: sem isso o titulo vira 5 linhas em telas medias */
+.hero__title .line > span { white-space: nowrap; }
 /* Kinetic type: cada linha sobe de dentro da própria caixa.
    O padding/margin compensados evitam que o overflow corte descendentes (g, ç). */
 .hero__title .line {
@@ -312,6 +315,7 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 .is-ready .hero__title .line:nth-child(1) > span { transition-delay: .03s; }
 .is-ready .hero__title .line:nth-child(2) > span { transition-delay: .09s; }
 .is-ready .hero__title .line:nth-child(3) > span { transition-delay: .15s; }
+.is-ready .hero__title .line:nth-child(4) > span { transition-delay: .21s; }
 .is-ready .hero__sub { transition-delay: .17s; }
 .is-ready .hero__cta { transition-delay: .23s; }
 .hero__sub {
@@ -1304,7 +1308,8 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 
   /* título do hero: fonte menor pra fechar em 4 linhas limpas no mobile
      (Estratégia, Tecnologia / e Performance para / empresas / que querem crescer.) */
-  .hero__title { font-size: clamp(1.35rem, 5.9vw, 1.72rem); }
+  .hero__title { font-size: clamp(1.35rem, 5.9vw, 1.72rem); text-wrap: wrap; }
+  .hero__title .line > span { white-space: normal; }
 
   /* ---- sticky-stack: ao rolar, cada card sobe e gruda por cima do anterior ---- */
   .pillars__grid, .solutions__grid { gap: 22px; }
