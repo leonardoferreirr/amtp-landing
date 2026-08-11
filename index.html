@@ -75,8 +75,58 @@
         </div>
         <div class="hero__panel hero__fade">
           <div class="hero__figure">
-            <div class="hero__photo">
-              <img class="hero__person" src="assets/img/hero-antoane.webp" alt="Antoane, fundador da AMTP Digital, com o notebook em um escritório" width="900" height="1125" fetchpriority="high">
+            <div class="hero__photo" aria-hidden="true">
+              <div class="pnl">
+                <div class="pnl__top">
+                  <span class="pnl__title">Painel de performance</span>
+                  <span class="pnl__tab">30 dias</span>
+                </div>
+
+                <svg class="pnl__chart" viewBox="0 0 320 150" preserveAspectRatio="none" focusable="false">
+                  <defs>
+                    <linearGradient id="pnlFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#27D1C8" stop-opacity=".42"/>
+                      <stop offset="100%" stop-color="#27D1C8" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <g class="pnl__gridlines">
+                    <line x1="0" y1="30" x2="320" y2="30"/>
+                    <line x1="0" y1="70" x2="320" y2="70"/>
+                    <line x1="0" y1="110" x2="320" y2="110"/>
+                  </g>
+                  <path class="pnl__area" d="M0,126 L34,118 L68,122 L102,98 L136,104 L170,74 L204,80 L238,48 L272,40 L306,18 L320,14 L320,150 L0,150 Z" fill="url(#pnlFill)"/>
+                  <path class="pnl__line" d="M0,126 L34,118 L68,122 L102,98 L136,104 L170,74 L204,80 L238,48 L272,40 L306,18 L320,14"/>
+                  <circle class="pnl__pt" cx="306" cy="18" r="4.5"/>
+                </svg>
+
+                <div class="pnl__rows">
+                  <div class="pnl__row">
+                    <span class="pnl__k">Oportunidades</span>
+                    <span class="pnl__bar"><i style="--w:88%"></i></span>
+                    <span class="pnl__v">1.284</span>
+                  </div>
+                  <div class="pnl__row">
+                    <span class="pnl__k">Qualificadas</span>
+                    <span class="pnl__bar"><i style="--w:64%"></i></span>
+                    <span class="pnl__v">812</span>
+                  </div>
+                  <div class="pnl__row">
+                    <span class="pnl__k">Reuniões</span>
+                    <span class="pnl__bar"><i style="--w:41%"></i></span>
+                    <span class="pnl__v">327</span>
+                  </div>
+                  <div class="pnl__row">
+                    <span class="pnl__k">Vendas</span>
+                    <span class="pnl__bar pnl__bar--win"><i style="--w:26%"></i></span>
+                    <span class="pnl__v">198</span>
+                  </div>
+                </div>
+
+                <div class="pnl__foot">
+                  <span class="pnl__chip">Meta batida</span>
+                  <span class="pnl__foot-txt">automação ativa · dados em tempo real</span>
+                </div>
+              </div>
             </div>
 
             <!-- tags flutuantes de dados -->
@@ -297,6 +347,7 @@
             <img src="assets/logos/sorrix.webp" alt="Sorrix" height="52" loading="lazy" decoding="async" width="52">
             <img src="assets/logos/mq-hair.webp" alt="MQ Professional" height="52" loading="lazy" decoding="async" width="52">
             <img src="assets/logos/integra.webp" alt="Integra" height="40" loading="lazy" decoding="async" width="62">
+            <img src="assets/logos/emagrecentro.webp" alt="Emagrecentro" height="46" loading="lazy" decoding="async" width="132">
           </div>
           <div class="marquee__group" aria-hidden="true">
             <img src="assets/logos/canopus.webp" alt="" height="50" loading="lazy" decoding="async" width="52">
@@ -308,6 +359,7 @@
             <img src="assets/logos/sorrix.webp" alt="" height="52" loading="lazy" decoding="async" width="52">
             <img src="assets/logos/mq-hair.webp" alt="" height="52" loading="lazy" decoding="async" width="52">
             <img src="assets/logos/integra.webp" alt="" height="40" loading="lazy" decoding="async" width="62">
+            <img src="assets/logos/emagrecentro.webp" alt="" height="46" loading="lazy" decoding="async" width="132">
           </div>
         </div>
       </div>
@@ -367,15 +419,10 @@
     <!-- SOBRE -->
     <section class="section about" id="sobre">
       <div class="container about__wrap">
-        <div class="about__photo reveal">
-          <img src="assets/img/antoane.webp" alt="Antoane Marmo, fundador e diretor estratégico da AMTP Digital" width="900" height="1350" loading="lazy">
-          <div class="about__badge">
-            <strong>Antoane Marmo</strong>
-            <span>Fundador e Diretor Estratégico</span>
-          </div>
+        <div class="about__head">
+          <h2 class="reveal">Não somos mais uma agência. Somos a estrutura por trás do <em>seu crescimento</em>.</h2>
         </div>
         <div class="about__text">
-          <h2 class="reveal">Não somos mais uma agência. Somos a estrutura por trás do <em>seu crescimento</em>.</h2>
           <p class="reveal">A AMTP Digital nasceu para resolver o que trava a maioria das empresas: marketing, vendas e tecnologia que não conversam entre si. Em vez de ações isoladas, construímos operações completas, onde atração, relacionamento e conversão funcionam como um sistema único.</p>
           <p class="reveal">Ao longo de quase duas décadas, evoluímos de gestão de tráfego para inteligência de negócios: hoje unimos performance, automação e IA para que cada oportunidade gerada se transforme, de fato, em venda.</p>
           <p class="reveal">Publicitário com especialização em Marketing Digital pela ESPM e mais de 18 anos de atuação no mercado, Antoane é referência em tráfego pago e estratégia digital no Vale do Paraíba e em São Paulo.</p>
