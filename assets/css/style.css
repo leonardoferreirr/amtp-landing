@@ -317,16 +317,24 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 .hero__panel { position: relative; justify-self: center; width: 100%; }
 .hero__figure {
   position: relative;
-  width: min(430px, 100%);
+  width: min(460px, 100%);
   margin-inline: auto;
-  aspect-ratio: 900 / 1299;
+  aspect-ratio: 900 / 1125;
+}
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 40px 70px -24px rgba(0, 0, 0, .6);
+  border: 1px solid rgba(255, 255, 255, .08);
 }
 .hero__person {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom center;
-  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, .45));
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 /* base das tags: cartão branco flutuante */
 .tagf {
@@ -582,14 +590,14 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
   display: grid;
   grid-template-columns: 1fr .92fr;
   grid-template-areas:
-    "head visual"
+    "head head"
     "body visual";
   column-gap: clamp(40px, 4.5vw, 72px);
   align-items: start;
   position: relative;
 }
-.lunna__head { grid-area: head; }
-.lunna__visual { grid-area: visual; align-self: center; }
+.lunna__head { grid-area: head; margin-bottom: clamp(22px, 3vw, 44px); }
+.lunna__visual { grid-area: visual; align-self: start; }
 .lunna__body { grid-area: body; }
 .lunna__brand {
   font-family: var(--font-display);
@@ -601,7 +609,7 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 .lunna__brand span { color: var(--teal); }
 .lunna h2 { color: var(--white); font-size: clamp(1.6rem, 1rem + 2.2vw, 2.5rem); }
 .lunna__body > p { margin-top: 20px; color: rgba(255, 255, 255, .78); }
-.lunna__body > p:first-child { margin-top: 28px; }
+.lunna__body > p:first-child { margin-top: 0; }
 .lunna__benefits {
   list-style: none;
   display: grid;
@@ -635,7 +643,7 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
 .lunna__visual {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 616px;
 }
 .chat {
