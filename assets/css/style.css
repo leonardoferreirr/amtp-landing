@@ -50,7 +50,8 @@ body {
   background: var(--white);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: hidden; /* fallback p/ browsers sem clip */
+  overflow-x: clip;   /* clip corta igual, mas NÃO vira scroll container: preserva position:sticky */
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -1203,6 +1204,27 @@ h2 em, h1 em { font-style: normal; color: var(--teal); }
   .btn--lg { padding: 15px 26px; font-size: .88rem; }
   .btn--xl { padding: 17px 30px; font-size: .92rem; }
   .hero { padding-top: 130px; }
+
+  /* título do hero: fonte menor pra fechar em 4 linhas limpas no mobile
+     (Estratégia, Tecnologia / e Performance para / empresas / que querem crescer.) */
+  .hero__title { font-size: clamp(1.35rem, 5.9vw, 1.72rem); }
+
+  /* ---- sticky-stack: ao rolar, cada card sobe e gruda por cima do anterior ---- */
+  .pillars__grid, .solutions__grid { gap: 22px; }
+  .pillar, .solution {
+    position: sticky;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* top escalonado deixa aparecer uma faixinha do card de baixo (efeito baralho) */
+  .pillar:nth-child(1), .solution:nth-child(1) { top: 94px; }
+  .pillar:nth-child(2), .solution:nth-child(2) { top: 106px; }
+  .pillar:nth-child(3), .solution:nth-child(3) { top: 118px; }
+  .pillar:nth-child(4), .solution:nth-child(4) { top: 130px; }
+  /* sombra permanente (não só no hover) pra dar profundidade ao empilhamento */
+  .pillar  { box-shadow: 0 -5px 14px rgba(2, 19, 71, .05), 0 18px 40px -12px rgba(2, 19, 71, .24); }
+  .solution { box-shadow: 0 -5px 14px rgba(2, 19, 71, .04), 0 18px 40px -12px rgba(2, 19, 71, .20); }
+
   /* na tela estreita o texto ocupa o centro: os quadrados que caíam em cima
      dele saem, os das bordas ficam mais discretos */
   .px--2, .px--3, .px--6 { display: none; }
